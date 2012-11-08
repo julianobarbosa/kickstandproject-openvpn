@@ -26,7 +26,7 @@ class openvpn::server::config {
 
   exec { "${openvpn::params::basedir}/dh2048.pem":
     cwd     => $openvpn::params::basedir,
-    command => 'openssl dhparams -out dh2048.pem 2048',
+    command => 'openssl dhparam -out dh2048.pem 2048',
     creates => "${openvpn::params::basedir}/dh2048.pem",
     require => File[$openvpn::params::basedir],
   }
