@@ -18,6 +18,11 @@ class openvpn::server::config {
     require => Class['openvpn::server::install'],
   }
 
+  file { $openvpn::params::varlogdir:
+    ensure  => directory,
+    require => Class['openvpn::server::install'],
+  }
+
   file { $openvpn::params::defaultfile:
     ensure  => file,
     content => template('openvpn/server/etc/default/openvpn.erb'),

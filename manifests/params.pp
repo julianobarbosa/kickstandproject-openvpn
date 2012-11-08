@@ -48,6 +48,11 @@ class openvpn::params {
   $servicename = $::operatingsystem ? {
     default => 'openvpn',
   }
+
+  # Fix upstream, we should not be setting this in puppet
+  $varlogdir = $::operatingsystem ? {
+    default => '/var/log/openvpn',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab:textwidth=79
