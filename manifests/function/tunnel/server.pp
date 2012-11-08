@@ -19,17 +19,15 @@
 # the top of the source tree.
 #
 define openvpn::function::tunnel::server(
-  $server,
-  $port = '1194',
-  $proto = 'udp',
-  $dev = 'tun',
-  $cert = "${name}.crt",
-  $key = "${name}.key",
-  $dh = '2048',
-  $keepalive = '10 120',
-  $tls-auth = 'ta.key',
+  $network,
   $cipher = 'BF-CBC',
   $compression = true,
+  $dev = 'tun',
+  $netmask = '255.255.255.0',
+  $port = '1194',
+  $proto = 'udp',
+  $keepalive = '10 120',
+  $tls-auth = 'ta.key',
 ) {
   file { "${openvpn::params::basedir}/${name}.conf":
     ensure  => file,
