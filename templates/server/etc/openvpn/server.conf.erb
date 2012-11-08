@@ -5,8 +5,8 @@ port <%= port %>
 proto <%= proto %>
 dev <%= dev %>
 ca /var/lib/puppet/ssl/certs/ca.crt
-cert /var/lib/puppet/ssl/certs/<% ::fqdn %>.pem
-key /var/lib/puppet/ssl/private_keys/<% ::fqdn %>.pem
+cert /var/lib/puppet/ssl/certs/<%= fqdn %>.pem
+key /var/lib/puppet/ssl/private_keys/<%= fqdn %>.pem
 dh dh2048.pem
 server 192.168.101.0 255.255.255.0
 ifconfig-pool-persist <%= name %>.conf.d/ipp.txt
