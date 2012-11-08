@@ -23,6 +23,7 @@
 # the top of the source tree.
 #
 class openvpn::server {
+  require puppet::client
   include openvpn::params
   include openvpn::server::init
 }
