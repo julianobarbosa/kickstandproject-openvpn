@@ -37,6 +37,12 @@ define openvpn::function::tunnel::server(
     notify  => Class['openvpn::server::service'],
     require => File[$openvpn::params::basedir],
   }
+
+  file { "${openvpn::params::basedir}/${name}.conf.d":
+    ensure  => directory,
+    notify  => Class['openvpn::server::service'],
+    require => File[$openvpn::params::basedir],
+  }
 }
 
 # vim:sw=2:ts=2:expandtab:textwidth=79
