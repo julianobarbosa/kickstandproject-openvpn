@@ -7,7 +7,7 @@ dev <%= dev %>
 ca ca.crt
 cert <%= name %>.conf.d/server.crt
 key <%= name %>.conf.d/server.key
-dh <%= name %>.conf.d/dh2048.pem
+dh dh2048.pem
 server 192.168.101.0 255.255.255.0
 ifconfig-pool-persist <%= name %>.conf.d/ipp.txt
 keepalive 10 120
