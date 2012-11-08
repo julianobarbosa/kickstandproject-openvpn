@@ -18,6 +18,19 @@ class openvpn::server::config {
     require => Class['openvpn::server::install'],
   }
 
+  file { "${openvpn::params::basedir}/dh2048.pem":
+    ensure  => file,
+    mode    => '0600',
+    require => File[$openvpn::params::basedir],
+  }
+
+  Exec { "${openvpn::params::basedir}/dh2048.pem":
+    cwd     => $openvpn::params::basedir,
+    command => 'openssl dhparams -out dh2048.pem 2048',
+    creates => File["${openvpn::params::basedir}/dh2048.pem"],
+    require => File[$openvpn::params::basedir],
+  }
+
   file { $openvpn::params::varlogdir:
     ensure  => directory,
     require => Class['openvpn::server::install'],
