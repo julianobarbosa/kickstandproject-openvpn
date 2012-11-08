@@ -21,6 +21,7 @@ class openvpn::server::config {
   file { "${openvpn::params::basedir}/dh2048.pem":
     ensure  => file,
     mode    => '0600',
+    notify  => Class['openvpn::server::service'],
     require => Exec["${openvpn::params::basedir}/dh2048.pem"],
   }
 
