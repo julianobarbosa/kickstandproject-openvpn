@@ -26,6 +26,7 @@ define openvpn::function::tunnel::server(
   $netmask = '255.255.255.0',
   $port = '1194',
   $proto = 'udp',
+  $push = [],
   $keepalive = '10 120',
   $tls-auth = 'ta.key',
 ) {

@@ -22,3 +22,7 @@ status /var/log/openvpn/<%= name %>-status.log
 log /var/log/openvpn/openvpn.log
 verb 3
 ;mute 20
+
+<%- push.sort.each do |key| -%>
+push = <%= key %>
+<%- end -%>
