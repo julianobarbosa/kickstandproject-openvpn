@@ -12,7 +12,7 @@ describe 'openvpn::server' do
       should contain_file('/etc/openvpn').with({
         'ensure' => 'directory',
         'group'  => 'root',
-        'mode'   => '0640',
+        'mode'   => '0644',
         'owner'  => 'root',
       })
     end
