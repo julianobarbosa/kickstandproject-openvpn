@@ -24,6 +24,7 @@
 #
 class openvpn::server {
   require puppet::client
+  require sysctl::client
   include openvpn::params
   include openvpn::server::init
 }
