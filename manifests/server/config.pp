@@ -42,6 +42,10 @@ class openvpn::server::config {
     content => template('openvpn/server/etc/default/openvpn.erb'),
     notify  => Class['openvpn::server::service'],
   }
+
+  sysctl::function::configfile { '10-ipv4-forward.conf':
+    content => template('openvpn/server/etc/sysctl.d/10-ipv4-forward.conf'),
+  }
 }
 
 # vim:sw=2:ts=2:expandtab:textwidth=79
