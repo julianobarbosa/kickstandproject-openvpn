@@ -8,3 +8,4 @@ project_page 'https://github.com/kickstandproject/kickstandproject-openvpn'
 
 dependency 'puppetlabs/stdlib', '>= 2.2.0'
 dependency 'kickstandproject/sysctl', '>= 0.0.1'
+dependency 'kickstandproject/puppet', '>= 0.0.7'

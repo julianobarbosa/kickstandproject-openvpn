@@ -21,7 +21,7 @@ describe 'openvpn::server' do
       should contain_file('/etc/default/openvpn').with({
         'ensure' => 'file',
         'group'  => 'root',
-        'mode'   => '0640',
+        'mode'   => '0644',
         'owner'  => 'root',
       })
     end

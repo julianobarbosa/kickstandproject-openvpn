@@ -1,5 +1,8 @@
 fixtures:
   repositories:
+    'common': 'git://github.com/kickstandproject/kickstandproject-common.git'
+    'puppet': 'git://github.com/kickstandproject/kickstandproject-puppet.git'
     'stdlib': 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
+    'sysctl': 'git://github.com/kickstandproject/kickstandproject-sysctl.git'
   symlinks:
     'openvpn': '#{source_dir}'
