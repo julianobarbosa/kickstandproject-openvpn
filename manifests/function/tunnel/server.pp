@@ -27,8 +27,7 @@ define openvpn::function::tunnel::server(
   $port = '1194',
   $proto = 'udp',
   $push = [],
-  $keepalive = '10 120',
-  $tls-auth = 'ta.key',
+  $keepalive = '10 120'
 ) {
   file { "${openvpn::params::basedir}/${name}.conf":
     ensure  => file,
